@@ -1,6 +1,6 @@
-package cn.monitor4all.springbootwebsocketdemo.service;
+package cn.monitor4all.happychat.service;
 
-import cn.monitor4all.springbootwebsocketdemo.model.ChatMessage;
+import cn.monitor4all.happychat.model.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

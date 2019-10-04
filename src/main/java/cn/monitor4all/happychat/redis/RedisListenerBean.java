@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo.redis;
+package cn.monitor4all.happychat.redis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,9 +9,6 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.stereotype.Component;
-
-import java.net.Inet4Address;
-import java.net.InetAddress;
 
 /**
  * Redis订阅频道属性类

@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo.config;
+package cn.monitor4all.happychat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

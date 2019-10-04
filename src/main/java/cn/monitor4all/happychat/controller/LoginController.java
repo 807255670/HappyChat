@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo.controller;
+package cn.monitor4all.happychat.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +31,14 @@ public class LoginController {
     @Autowired
     StringRedisTemplate redisTemplate;
 
+    /**
+     * 判断是否已登录，已登录就直接跳转主页
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @GetMapping("/")
     public String index(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         LOGGER.info("has cookie?:"+String.valueOf(request.getCookies()!=null));
@@ -45,17 +53,28 @@ public class LoginController {
                 }
             }
         }
-        return "redirect:/login";
+        return "redirect:/auth";
     }
 
+    /**
+     * 重定向到阿里认证
+     * @param request
+     * @return
+     */
     @GetMapping("/auth")
     public String auth(HttpServletRequest request){
         LOGGER.info("auth----");
         return "redirect:"+"https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?"+
                 "app_id=2019071465849264&scope=auth_user&redirect_uri="+
-                "http://n6bd9f.natappfree.cc/alipay/auth";
+                "http://rf5v2p.natappfree.cc/alipay/auth";
     }
 
+    /**
+     * 设置cokie和session  返回主页
+     * @param response
+     * @param request
+     * @return
+     */
     @GetMapping("/login")
     public ModelAndView login(HttpServletResponse response, HttpServletRequest request){
         LOGGER.info("logining------");

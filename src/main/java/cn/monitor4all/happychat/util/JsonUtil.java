@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo.util;
+package cn.monitor4all.happychat.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

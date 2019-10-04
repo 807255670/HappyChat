@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo;
+package cn.monitor4all.happychat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

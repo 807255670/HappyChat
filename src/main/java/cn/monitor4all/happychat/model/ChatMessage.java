@@ -1,4 +1,4 @@
-package cn.monitor4all.springbootwebsocketdemo.model;
+package cn.monitor4all.happychat.model;
 
 
 public class ChatMessage {
