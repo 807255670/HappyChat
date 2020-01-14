@@ -40,7 +40,7 @@ public class LoginController {
      * @throws IOException
      */
     @GetMapping("/")
-    public String index(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+    public ModelAndView index(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         LOGGER.info("has cookie?:"+String.valueOf(request.getCookies()!=null));
         if(request.getCookies()!=null){
             for(Cookie cookie:request.getCookies()){
@@ -48,12 +48,12 @@ public class LoginController {
                     String token = cookie.getValue();
                     if(redisTemplate.hasKey("token_"+token)){
                         request.setAttribute("userid",redisTemplate.opsForValue().get("token_"+token));
-                        return "index.html";
+                        return new ModelAndView("chat");
                     }
                 }
             }
         }
-        return "redirect:/auth";
+        return new ModelAndView("redirect:/auth");
     }
 
     /**
@@ -66,7 +66,7 @@ public class LoginController {
         LOGGER.info("auth----");
         return "redirect:"+"https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?"+
                 "app_id=2019071465849264&scope=auth_user&redirect_uri="+
-                "http://rf5v2p.natappfree.cc/alipay/auth";
+                "http://dwtqhe.natappfree.cc/alipay/auth";
     }
 
     /**
@@ -90,7 +90,7 @@ public class LoginController {
         cookie.setPath("/");
         cookie.setMaxAge(7200);
         response.addCookie(cookie);
-        return new ModelAndView("index.html");
+        return new ModelAndView("chat");
     }
 
     @GetMapping("/logout")

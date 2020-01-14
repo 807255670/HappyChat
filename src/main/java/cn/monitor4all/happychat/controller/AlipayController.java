@@ -22,6 +22,11 @@ public class AlipayController {
     @Autowired
     private AlipayLoginService alipayLoginService;
 
+    /**
+     * 支付宝回调访问地址
+     * @param request
+     * @return
+     */
     @RequestMapping("/auth")
     public String getAuthCode(HttpServletRequest request) {
 

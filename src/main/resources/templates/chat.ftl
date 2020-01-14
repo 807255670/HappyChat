@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page isELIgnored="false"%>
 <html>
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -9,10 +11,9 @@
     <noscript>
       <h2>Sorry! Your browser doesn't support Javascript</h2>
     </noscript>
-    <a>${userid}</a>
     <div id="username-page">
         <div class="username-page-container">
-            <h1 class="title">Type your nickname</h1>
+            <h1 class="title">Type your nickname ${userid}</h1>
             <form id="usernameForm" name="usernameForm">
                 <div class="form-group">
                     <input type="text" id="name" placeholder="Nickname" autocomplete="off" class="form-control" />
@@ -27,7 +28,7 @@
     <div id="chat-page" class="hidden">
         <div class="chat-container">
             <div class="chat-header">
-                <h2>Happy World</h2>
+                <h2>Happy Chat</h2>
             </div>
             <div class="connecting">
                 Connecting...
